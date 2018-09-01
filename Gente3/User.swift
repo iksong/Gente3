@@ -65,7 +65,7 @@ extension User: CellConfigurable {
     
     static func resourceForAllUsers() -> Resource<[User]>? {
         guard let url = URL.init(string: BackEnd.user.urlString()) else { return nil }
-        return Resource<[User]>.init(withURL: url)
+        return Resource<[User]>.init(withURL: url, stubDataAssetName: BackEnd.user.dataAssetName())
     }
 }
 

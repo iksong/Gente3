@@ -14,6 +14,7 @@
 		948B48B721373B7000E8E929 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948B48B621373B6F00E8E929 /* LoginViewController.swift */; };
 		948B48B921373BA100E8E929 /* MultiLabelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948B48B821373BA100E8E929 /* MultiLabelsView.swift */; };
 		9495CAF5213ACBA8005BE3B2 /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9495CAF4213ACBA8005BE3B2 /* DateFormatterExtension.swift */; };
+		9495CAF9213AEA82005BE3B2 /* DataAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9495CAF8213AEA82005BE3B2 /* DataAssets.swift */; };
 		949DBEDA2129B03500188FD7 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949DBED92129B03500188FD7 /* UIAlertControllerExtension.swift */; };
 		C95557F81FC66C2C00A91C13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95557F71FC66C2C00A91C13 /* AppDelegate.swift */; };
 		C95557FA1FC66C2C00A91C13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95557F91FC66C2C00A91C13 /* ViewController.swift */; };
@@ -52,6 +53,7 @@
 		948B48B621373B6F00E8E929 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		948B48B821373BA100E8E929 /* MultiLabelsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiLabelsView.swift; sourceTree = "<group>"; };
 		9495CAF4213ACBA8005BE3B2 /* DateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
+		9495CAF8213AEA82005BE3B2 /* DataAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAssets.swift; sourceTree = "<group>"; };
 		949DBED92129B03500188FD7 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
 		C95557F41FC66C2C00A91C13 /* Gente3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gente3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C95557F71FC66C2C00A91C13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +132,14 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		9495CAF7213AEA4A005BE3B2 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				9495CAF8213AEA82005BE3B2 /* DataAssets.swift */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		C95557EB1FC66C2C00A91C13 = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +161,7 @@
 		C95557F61FC66C2C00A91C13 /* Gente3 */ = {
 			isa = PBXGroup;
 			children = (
+				9495CAF7213AEA4A005BE3B2 /* Assets */,
 				9495CAF6213AE90D005BE3B2 /* Network */,
 				9495CAF3213ACB81005BE3B2 /* DateFormatter */,
 				948B48AF21373B3100E8E929 /* Styles */,
@@ -290,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9495CAF9213AEA82005BE3B2 /* DataAssets.swift in Sources */,
 				C95557FA1FC66C2C00A91C13 /* ViewController.swift in Sources */,
 				C95558201FC66D7F00A91C13 /* FlowViewController.swift in Sources */,
 				948B48B321373B3F00E8E929 /* LabelStyle.swift in Sources */,

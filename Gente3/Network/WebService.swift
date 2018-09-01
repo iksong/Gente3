@@ -18,15 +18,24 @@ enum BackEnd {
         case .post :    return "https://jsonplaceholder.typicode.com/posts?userId="
         }
     }
+    
+    func dataAssetName() -> String {
+        switch self {
+        case .user:     return "UsersData"
+        case .post:     return ""
+        }
+    }
 }
 
 struct Resource<A: Codable> {
     let url: URL
+    let stubDataAssetName: String
 }
 
 extension Resource {
-    init(withURL url: URL) {
+    init(withURL url: URL, stubDataAssetName: String = "") {
         self.url = url
+        self.stubDataAssetName = stubDataAssetName
     }
 }
 
@@ -37,6 +46,7 @@ enum Result<T> {
 
 class WebService {
     let decoder = JSONDecoder()
+    
     func load<A>(resource: Resource<A>, completion: @escaping (Result<A>) -> ()) {
         URLSession.shared.dataTask(with: resource.url) { data, _, _ in
             guard let data = data else {
@@ -49,5 +59,16 @@ class WebService {
             }
             
         }.resume()
+    }
+    
+    func loadFromDataAssets<A>(resource: Resource<A>, completion: @escaping (Result<A>) -> ()) {
+        guard let data = DataAssets.loadDataAsset(name: resource.stubDataAssetName) else {
+            completion(.failure("Invalid data asset name"))
+            return
+        }
+        
+        if let parsed = try? self.decoder.decode(A.self, from: data) {
+            completion(.success(parsed))
+        }
     }
 }
