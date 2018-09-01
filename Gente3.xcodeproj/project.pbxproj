@@ -122,6 +122,14 @@
 			path = DateFormatter;
 			sourceTree = "<group>";
 		};
+		9495CAF6213AE90D005BE3B2 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C95558181FC66C3C00A91C13 /* WebService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		C95557EB1FC66C2C00A91C13 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +151,7 @@
 		C95557F61FC66C2C00A91C13 /* Gente3 */ = {
 			isa = PBXGroup;
 			children = (
+				9495CAF6213AE90D005BE3B2 /* Network */,
 				9495CAF3213ACB81005BE3B2 /* DateFormatter */,
 				948B48AF21373B3100E8E929 /* Styles */,
 				948B48AC21373AE700E8E929 /* Validation */,
@@ -159,7 +168,6 @@
 				C95558231FC66E7400A91C13 /* UsersTableViewController.swift */,
 				C95558171FC66C3C00A91C13 /* User.swift */,
 				C95557F91FC66C2C00A91C13 /* ViewController.swift */,
-				C95558181FC66C3C00A91C13 /* WebService.swift */,
 				C95557FB1FC66C2C00A91C13 /* Main.storyboard */,
 				C95557FE1FC66C2C00A91C13 /* Assets.xcassets */,
 				C95558001FC66C2C00A91C13 /* LaunchScreen.storyboard */,
