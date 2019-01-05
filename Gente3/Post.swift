@@ -29,11 +29,11 @@ extension Post: CellConfigurable {
     
     static func urlForUserID(id: String) -> URL? {
         let urlStr = "\(BackEnd.post.urlString())\(id)"
-        return URL.init(string: urlStr)
+        return URL(string: urlStr)
     }
     
     static func postResourceForUserID(id: String) -> Resource<[Post]>? {
         guard let url = Post.urlForUserID(id: id) else { return nil }
-        return Resource<[Post]>.init(withURL: url)
+        return Resource<[Post]>.init(withURLRequest: URLRequest(url: url))
     }
 }

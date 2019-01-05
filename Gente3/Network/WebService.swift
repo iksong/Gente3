@@ -28,13 +28,13 @@ enum BackEnd {
 }
 
 struct Resource<A: Codable> {
-    let url: URL
+    let urlRequest: URLRequest
     let stubDataAssetName: String
 }
 
 extension Resource {
-    init(withURL url: URL, stubDataAssetName: String = "") {
-        self.url = url
+    init(withURLRequest urlRequest: URLRequest, stubDataAssetName: String = "") {
+        self.urlRequest = urlRequest
         self.stubDataAssetName = stubDataAssetName
     }
 }
@@ -48,7 +48,7 @@ class WebService {
     let decoder = JSONDecoder()
     
     func load<A>(resource: Resource<A>, completion: @escaping (Result<A>) -> ()) {
-        URLSession.shared.dataTask(with: resource.url) { data, _, _ in
+        URLSession.shared.dataTask(with: resource.urlRequest) { (data, _, _) in
             guard let data = data else {
                 completion(.failure("Invalid data response"))
                 return
@@ -57,7 +57,6 @@ class WebService {
             if let parsed = try? self.decoder.decode(A.self, from: data) {
                 completion(.success(parsed))
             }
-            
         }.resume()
     }
     
