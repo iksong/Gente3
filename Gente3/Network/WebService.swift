@@ -8,6 +8,20 @@
 
 import Foundation
 
+enum HttpMethod<Body> {
+    case get
+    case post(Body)
+}
+
+extension HttpMethod {
+    var method: String {
+        switch self {
+        case .get: return "GET"
+        case .post: return "POST"
+        }
+    }
+}
+
 enum BackEnd {
     case user
     case post
@@ -28,14 +42,34 @@ enum BackEnd {
 }
 
 struct Resource<A: Codable> {
-    let urlRequest: URLRequest
+    var urlRequest: URLRequest
     let stubDataAssetName: String
+    let parse: (Data) -> A?
 }
 
 extension Resource {
-    init(withURLRequest urlRequest: URLRequest, stubDataAssetName: String = "") {
+    init(get urlRequest: URLRequest, stubDataAssetName: String = "") {
         self.urlRequest = urlRequest
         self.stubDataAssetName = stubDataAssetName
+        self.parse = { data in
+            try? JSONDecoder().decode(A.self, from: data)
+        }
+    }
+    
+    init<Body: Encodable>(url: URL, method: HttpMethod<Body>, stubDataAssetName: String = "") {
+        self.stubDataAssetName = stubDataAssetName
+        
+        urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = method.method
+        
+        switch method {
+        case .get: ()
+        case .post(let body):
+            self.urlRequest.httpBody = try! JSONEncoder().encode(body)
+        }
+        self.parse = { data in
+            try? JSONDecoder().decode(A.self, from: data)
+        }
     }
 }
 

@@ -34,6 +34,6 @@ extension Post: CellConfigurable {
     
     static func postResourceForUserID(id: String) -> Resource<[Post]>? {
         guard let url = Post.urlForUserID(id: id) else { return nil }
-        return Resource<[Post]>.init(withURLRequest: URLRequest(url: url))
+        return Resource<[Post]>.init(get: URLRequest(url: url))
     }
 }
