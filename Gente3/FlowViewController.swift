@@ -7,11 +7,8 @@
 //
 
 import UIKit
-import Combine
 
 class FlowViewController: UIViewController {
-
-    private var fetchCancellable: AnyCancellable?
     
     init() { super.init(nibName: nil, bundle: nil) }
     
@@ -27,7 +24,6 @@ class FlowViewController: UIViewController {
         userVC.delegate = self
 
         transition(to: userVC)
-        fetch(User.resourceForAllUsers()!)
     }
 
     func loadResource<T: Codable>(_ resource: Resource<[T]>) where T: CellConfigurable {
@@ -35,18 +31,6 @@ class FlowViewController: UIViewController {
         navigationController?.pushViewController(postVC, animated: true)
     }
     
-    func fetch<T>(_ resource: Resource<T>) {
-        fetchCancellable = URLSession.shared.dataTaskPublisher(for: resource.urlRequest)
-            .map { data, response in
-                resource.parse(data)
-            }
-            .sink(receiveCompletion: { _ in
-                print("Received completion")
-            }, receiveValue: {
-                print($0)
-            })
-        
-    }
     @objc func showAlert() {
         let alertController = UIAlertController.init(title: "Smart Alert", cancelButtonTitle: "No Way", okButtonTitle: "Yes, please") { result in
             switch result {

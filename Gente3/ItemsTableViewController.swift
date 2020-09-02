@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Combine
 
 /**
  The `CellConfigurable` protocol declares the required method and properties for all objects that subscribe to it.
@@ -55,6 +56,8 @@ class ItemsTableViewController<T: CellConfigurable>: UITableViewController where
         }
     }
     
+    private var fetchCancellable: AnyCancellable?
+    
     let cellDescriptor: CellDescriptor<T>
     
     //MARK: - Initializer
@@ -102,23 +105,23 @@ class ItemsTableViewController<T: CellConfigurable>: UITableViewController where
         }
 
         transition(to: LoadingViewController()) { _ in
-            WebService().load(resource: resource) { result in
-                switch result {
-                case .failure(let errorString):
-                    DispatchQueue.main.async {
-                        self.popTopView()
-                        let messageVC = MessageViewController(message: errorString)
+            self.fetchCancellable = URLSession.shared.dataTaskPublisher(for: resource.urlRequest)
+                .map { data, response in
+                    resource.parse(data)
+                }
+                .replaceError(with: nil)
+                .receive(on: DispatchQueue.main)
+                .sink { items in
+                    self.popTopView()
+                    if let items = items {
+                        self.items = items
+                        self.tableView.reloadData()
+                    } else {
+                        let messageVC = MessageViewController(message: "Something went wrong")
                         messageVC.delegate = self
                         self.transition(to: messageVC)
                     }
-                case .success(let items):
-                    self.items = items
-                    DispatchQueue.main.async {
-                        self.popTopView()
-                        self.tableView.reloadData()
-                    }
                 }
-            }
         }
 
     }
@@ -128,10 +131,8 @@ class ItemsTableViewController<T: CellConfigurable>: UITableViewController where
      Using a member of items array which conforms `CellConfigurable`
      */
     func regiserCell() {
-        DispatchQueue.main.async {
-            if let firstItem = self.items.first {
-                self.tableView.register(firstItem.cellClass, forCellReuseIdentifier: firstItem.cellID)
-            }
+        if let firstItem = self.items.first {
+            self.tableView.register(firstItem.cellClass, forCellReuseIdentifier: firstItem.cellID)
         }
     }
     
