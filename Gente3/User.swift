@@ -97,13 +97,13 @@ class UserTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         let stackView = UIStackView()
-        stackView.axis = UILayoutConstraintAxis.vertical
-        stackView.distribution = UIStackViewDistribution.equalSpacing
-        stackView.alignment = UIStackViewAlignment.fill
+        stackView.axis = NSLayoutConstraint.Axis.vertical
+        stackView.distribution = UIStackView.Distribution.equalSpacing
+        stackView.alignment = UIStackView.Alignment.fill
         stackView.spacing = 8.0
         
         stackView.addArrangedSubview(nameLabel)

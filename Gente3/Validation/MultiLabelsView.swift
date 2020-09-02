@@ -57,7 +57,7 @@ final class MultiLabelsView: UIView {
     /**
      `contentView` axis.
      */
-    var contentViewAxis: UILayoutConstraintAxis = UILayoutConstraintAxis.vertical {
+    var contentViewAxis: NSLayoutConstraint.Axis = NSLayoutConstraint.Axis.vertical {
         didSet {
             self.contentView.axis = contentViewAxis
         }
@@ -66,7 +66,7 @@ final class MultiLabelsView: UIView {
     /**
      `contentView` alignment.
      */
-    var contentViewAlignment: UIStackViewAlignment = UIStackViewAlignment.fill {
+    var contentViewAlignment: UIStackView.Alignment = UIStackView.Alignment.fill {
         didSet {
             self.contentView.alignment = self.contentViewAlignment
         }

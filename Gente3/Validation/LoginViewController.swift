@@ -112,7 +112,7 @@ final class LoginViewController: UIViewController {
      - parameter sender: UIKeyboardWillShow notification.
      */
     @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardHeight = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height {
+        if let keyboardHeight = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height {
             var inset = scrollView.contentInset
             inset.bottom = keyboardHeight
             scrollView.contentInset = inset
@@ -125,7 +125,7 @@ final class LoginViewController: UIViewController {
      - parameter sender: UIKeyboardWillHide notification.
      */
     @objc func keyboardWillHide(notification: NSNotification) {
-        scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     
     //MARK:- Private methods
@@ -144,16 +144,16 @@ final class LoginViewController: UIViewController {
      Registers self to UIKeyboardWillShow, UIKeyboardWillHide notifications.
      */
     private func addKeyboardObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     /**
      Unegisters self from UIKeyboardWillShow, UIKeyboardWillHide notifications.
      */
     private func removeKeyboardObservers() {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: self.view.window)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: self.view.window)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: self.view.window)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: self.view.window)
     }
     
     /**

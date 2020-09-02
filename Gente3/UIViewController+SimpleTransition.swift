@@ -13,8 +13,8 @@ extension UIViewController {
     func transition(to child: UIViewController, completion: ((Bool) -> Void)? = nil) {
         let duration = 0.3
         
-        let current = childViewControllers.last
-        addChildViewController(child)
+        let current = children.last
+        addChild(child)
         
         let newView = child.view!
         newView.translatesAutoresizingMaskIntoConstraints = true
@@ -22,11 +22,11 @@ extension UIViewController {
         newView.frame = view.bounds
         
         if let existing = current {
-            existing.willMove(toParentViewController: nil)
+            existing.willMove(toParent: nil)
             
             transition(from: existing, to: child, duration: duration, options: [.transitionCrossDissolve], animations: { }, completion: { done in
-                existing.removeFromParentViewController()
-                child.didMove(toParentViewController: self)
+                existing.removeFromParent()
+                child.didMove(toParent: self)
                 completion?(done)
             })
             
@@ -34,18 +34,18 @@ extension UIViewController {
             view.addSubview(newView)
             
             UIView.animate(withDuration: duration, delay: 0, options: [.transitionCrossDissolve], animations: { }, completion: { done in
-                child.didMove(toParentViewController: self)
+                child.didMove(toParent: self)
                 completion?(done)
             })
         }
     }
     
     func popTopView(completion: ((Bool) -> Void)? = nil) {
-        if let topView = childViewControllers.last {
-            topView.willMove(toParentViewController: nil)
+        if let topView = children.last {
+            topView.willMove(toParent: nil)
             topView.view.removeFromSuperview()
-            topView.removeFromParentViewController()
-            topView.didMove(toParentViewController: self)
+            topView.removeFromParent()
+            topView.didMove(toParent: self)
             completion?(true)
         }
     }

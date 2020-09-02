@@ -82,7 +82,7 @@ class ItemsTableViewController<T: CellConfigurable>: UITableViewController where
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 50
         
         loadResource(resource)
