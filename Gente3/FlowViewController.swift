@@ -20,10 +20,51 @@ class FlowViewController: UIViewController {
         //Add right button item
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Alert", style: .plain, target: self, action: #selector(showAlert))
         
+        setupMenu()
+    }
+    
+    private func setupMenu() {
+        let userTableButton = UIButton()
+        userTableButton.apply(style: .black)
+        userTableButton.setTitle("User - TableView", for: .normal)
+        userTableButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
+        userTableButton.addTarget(self, action: #selector(showUsersTable), for: .touchUpInside)
+        userTableButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            userTableButton.heightAnchor.constraint(equalToConstant: 60)
+        ])
+        
+        let userCollectionButton = UIButton()
+        userCollectionButton.apply(style: .black)
+        userCollectionButton.setTitle("User - CollectionView", for: .normal)
+        userCollectionButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
+        userCollectionButton.addTarget(self, action: #selector(showUsersCollection), for: .touchUpInside)
+        userCollectionButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            userCollectionButton.heightAnchor.constraint(equalToConstant: 60)
+        ])
+        
+        let stackV = UIStackView()
+        stackV.axis = .vertical
+        stackV.spacing = 15
+        stackV.addArrangedSubview(userTableButton)
+        stackV.addArrangedSubview(userCollectionButton)
+        
+        stackV.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(stackV)
+        constraintToTop(stackV, constant: 200, spacing: 50)
+    }
+    
+    @objc func showUsersTable() {
         let userVC = UsersTableViewController(items: [], resource: User.resourceForAllUsers(), cellDescriptor: CellDescriptor(configure: {$1.configure($0)}))
         userVC.delegate = self
 
-        transition(to: userVC)
+        navigationController?.pushViewController(userVC, animated: true)
+    }
+    
+    @objc func showUsersCollection() {
+        
     }
 
     func loadResource<T: Codable>(_ resource: Resource<[T]>) where T: CellConfigurable {
