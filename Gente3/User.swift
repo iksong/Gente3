@@ -77,6 +77,11 @@ extension User: CollectionContentConfigurable {
     func configure(content: inout UIListContentConfiguration) {
         content.text = name
         content.secondaryText = email
+        content.secondaryTextProperties.color = .secondaryLabel
+        content.secondaryTextProperties.font = UIFont.preferredFont(forTextStyle: .subheadline)
+
+        content.image = UIImage(systemName: "person.circle")
+        content.imageProperties.preferredSymbolConfiguration = .init(font: content.textProperties.font, scale: .large)
     }
 }
 

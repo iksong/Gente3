@@ -45,12 +45,6 @@ class ItemsCollectionViewController<Item>: UICollectionViewController where Item
         let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, Item> { cell, _, item in
             var content = cell.defaultContentConfiguration()
             item.configure(content: &content)
-            content.secondaryTextProperties.color = .secondaryLabel
-            content.secondaryTextProperties.font = UIFont.preferredFont(forTextStyle: .subheadline)
-
-            content.image = UIImage(systemName: "person.circle")
-            content.imageProperties.preferredSymbolConfiguration = .init(font: content.textProperties.font, scale: .large)
-
             cell.contentConfiguration = content
             cell.accessories = [.disclosureIndicator()]
             cell.tintColor = .systemPurple
