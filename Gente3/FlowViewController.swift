@@ -64,7 +64,8 @@ class FlowViewController: UIViewController {
     }
     
     @objc func showUsersCollection() {
-        
+        let userVC = ItemsCollectionViewController(items: [], resource: User.resourceForAllUsers())
+        navigationController?.pushViewController(userVC, animated: true)
     }
 
     func loadResource<T: Codable>(_ resource: Resource<[T]>) where T: CellConfigurable {

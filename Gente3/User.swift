@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct UserAddress: Codable {
+struct UserAddress: Codable, Hashable {
     let street: String?
     let suite: String?
     let city: String?
@@ -38,7 +38,11 @@ extension UserAddress {
     }
 }
 
-struct User: Codable {
+struct User: Codable, Hashable {
+    static func == (lhs: User, rhs: User) -> Bool {
+        lhs.id == rhs.id
+    }
+    
     let id: Int
     let name: String
     let username: String
@@ -66,6 +70,13 @@ extension User: CellConfigurable {
     static func resourceForAllUsers() -> Resource<[User]>? {
         guard let url = URL(string: BackEnd.user.urlString()) else { return nil }
         return Resource<[User]>.init(get: URLRequest(url: url), stubDataAssetName: BackEnd.user.dataAssetName())
+    }
+}
+
+extension User: CollectionContentConfigurable {
+    func configure(content: inout UIListContentConfiguration) {
+        content.text = name
+        content.secondaryText = email
     }
 }
 

@@ -33,6 +33,7 @@
 		C979340A1FC7271B0008E9D7 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97934081FC7271A0008E9D7 /* LoadingViewController.swift */; };
 		C979340D1FC7556F0008E9D7 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C979340B1FC7556F0008E9D7 /* MessageViewController.swift */; };
 		C979340E1FC7556F0008E9D7 /* MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C979340C1FC7556F0008E9D7 /* MessageViewController.xib */; };
+		E191207125006381002F508B /* ItemsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E191207025006381002F508B /* ItemsCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		C97934081FC7271A0008E9D7 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		C979340B1FC7556F0008E9D7 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		C979340C1FC7556F0008E9D7 /* MessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageViewController.xib; sourceTree = "<group>"; };
+		E191207025006381002F508B /* ItemsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				C95557F71FC66C2C00A91C13 /* AppDelegate.swift */,
 				C955581F1FC66D7F00A91C13 /* FlowViewController.swift */,
 				C955581D1FC66CA400A91C13 /* ItemsTableViewController.swift */,
+				E191207025006381002F508B /* ItemsCollectionViewController.swift */,
 				C97934081FC7271A0008E9D7 /* LoadingViewController.swift */,
 				C97934071FC7271A0008E9D7 /* LoadingViewController.xib */,
 				C979340B1FC7556F0008E9D7 /* MessageViewController.swift */,
@@ -314,6 +317,7 @@
 				9495CAF5213ACBA8005BE3B2 /* DateFormatterExtension.swift in Sources */,
 				948B48B521373B3F00E8E929 /* ButtonStyle.swift in Sources */,
 				C955581A1FC66C3D00A91C13 /* User.swift in Sources */,
+				E191207125006381002F508B /* ItemsCollectionViewController.swift in Sources */,
 				C979340D1FC7556F0008E9D7 /* MessageViewController.swift in Sources */,
 				949DBEDA2129B03500188FD7 /* UIAlertControllerExtension.swift in Sources */,
 				948B48B721373B7000E8E929 /* LoginViewController.swift in Sources */,
