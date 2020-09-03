@@ -22,5 +22,12 @@ class UsersTableViewController: ItemsTableViewController<User> {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         delegate?.userTableViewControllerDidSelectUser(items[indexPath.row])
     }
+}
+
+class UsersCollectionViewController: ItemsCollectionViewController<User> {
+    weak var delegate: UsersTableViewControllerDelegate?
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.userTableViewControllerDidSelectUser(items[indexPath.row])
+    }
 }

@@ -64,7 +64,8 @@ class FlowViewController: UIViewController {
     }
     
     @objc func showUsersCollection() {
-        let userVC = ItemsCollectionViewController(items: [], resource: User.resourceForAllUsers())
+        let userVC = UsersCollectionViewController(items: [], resource: User.resourceForAllUsers())
+        userVC.delegate = self
         navigationController?.pushViewController(userVC, animated: true)
     }
 

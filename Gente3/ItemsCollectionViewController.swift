@@ -98,12 +98,6 @@ class ItemsCollectionViewController<Item>: UICollectionViewController where Item
         snapshot.appendItems(items)
         dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
     }
-
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let item = dataSource.itemIdentifier(for: indexPath) {
-            collectionView.deselectItem(at: indexPath, animated: true)
-        }
-    }
 }
 
 extension ItemsCollectionViewController: MessageViewControllerDelegate {
