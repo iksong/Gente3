@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftUI
+import Combine
 
 class FlowViewController: UIViewController {
     
@@ -73,8 +75,15 @@ class FlowViewController: UIViewController {
         present(loginVC, animated: true, completion: nil)
     }
     
+    var loginModelCancellable: AnyCancellable?
     func showLoginSWiftUI() {
-        // todo
+        let model = LoginModel()
+        loginModelCancellable = model.$userModel.sink {
+            print("email : \($0.email)")
+            print("password : \($0.password)")
+        }
+        let hostingCon = UIHostingController(rootView: Login(model: model))
+        present(hostingCon, animated: true, completion: nil)
     }
     
     func showUsersTable() {

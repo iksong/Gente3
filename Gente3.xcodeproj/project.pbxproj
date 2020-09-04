@@ -17,7 +17,7 @@
 		9495CAF9213AEA82005BE3B2 /* DataAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9495CAF8213AEA82005BE3B2 /* DataAssets.swift */; };
 		949DBEDA2129B03500188FD7 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949DBED92129B03500188FD7 /* UIAlertControllerExtension.swift */; };
 		C95557F81FC66C2C00A91C13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95557F71FC66C2C00A91C13 /* AppDelegate.swift */; };
-		C95557FA1FC66C2C00A91C13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95557F91FC66C2C00A91C13 /* ViewController.swift */; };
+		C95557FA1FC66C2C00A91C13 /* ViewControllerExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95557F91FC66C2C00A91C13 /* ViewControllerExtention.swift */; };
 		C95557FD1FC66C2C00A91C13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C95557FB1FC66C2C00A91C13 /* Main.storyboard */; };
 		C95557FF1FC66C2C00A91C13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C95557FE1FC66C2C00A91C13 /* Assets.xcassets */; };
 		C95558021FC66C2C00A91C13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C95558001FC66C2C00A91C13 /* LaunchScreen.storyboard */; };
@@ -34,6 +34,7 @@
 		C979340D1FC7556F0008E9D7 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C979340B1FC7556F0008E9D7 /* MessageViewController.swift */; };
 		C979340E1FC7556F0008E9D7 /* MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C979340C1FC7556F0008E9D7 /* MessageViewController.xib */; };
 		E191207125006381002F508B /* ItemsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E191207025006381002F508B /* ItemsCollectionViewController.swift */; };
+		E19120732502C0E4002F508B /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19120722502C0E4002F508B /* Login.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +59,7 @@
 		949DBED92129B03500188FD7 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
 		C95557F41FC66C2C00A91C13 /* Gente3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gente3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C95557F71FC66C2C00A91C13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C95557F91FC66C2C00A91C13 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C95557F91FC66C2C00A91C13 /* ViewControllerExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtention.swift; sourceTree = "<group>"; };
 		C95557FC1FC66C2C00A91C13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C95557FE1FC66C2C00A91C13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C95558011FC66C2C00A91C13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,6 +79,7 @@
 		C979340B1FC7556F0008E9D7 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		C979340C1FC7556F0008E9D7 /* MessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageViewController.xib; sourceTree = "<group>"; };
 		E191207025006381002F508B /* ItemsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCollectionViewController.swift; sourceTree = "<group>"; };
+		E19120722502C0E4002F508B /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 				948B48AC21373AE700E8E929 /* Validation */,
 				C95557F71FC66C2C00A91C13 /* AppDelegate.swift */,
 				C955581F1FC66D7F00A91C13 /* FlowViewController.swift */,
+				E19120722502C0E4002F508B /* Login.swift */,
 				C955581D1FC66CA400A91C13 /* ItemsTableViewController.swift */,
 				E191207025006381002F508B /* ItemsCollectionViewController.swift */,
 				C97934081FC7271A0008E9D7 /* LoadingViewController.swift */,
@@ -181,7 +184,7 @@
 				C95558191FC66C3D00A91C13 /* Post.swift */,
 				C95558231FC66E7400A91C13 /* UsersTableViewController.swift */,
 				C95558171FC66C3C00A91C13 /* User.swift */,
-				C95557F91FC66C2C00A91C13 /* ViewController.swift */,
+				C95557F91FC66C2C00A91C13 /* ViewControllerExtention.swift */,
 				C95557FB1FC66C2C00A91C13 /* Main.storyboard */,
 				C95557FE1FC66C2C00A91C13 /* Assets.xcassets */,
 				C95558001FC66C2C00A91C13 /* LaunchScreen.storyboard */,
@@ -305,7 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9495CAF9213AEA82005BE3B2 /* DataAssets.swift in Sources */,
-				C95557FA1FC66C2C00A91C13 /* ViewController.swift in Sources */,
+				C95557FA1FC66C2C00A91C13 /* ViewControllerExtention.swift in Sources */,
 				C95558201FC66D7F00A91C13 /* FlowViewController.swift in Sources */,
 				948B48B321373B3F00E8E929 /* LabelStyle.swift in Sources */,
 				948B48B421373B3F00E8E929 /* TextFieldStyle.swift in Sources */,
@@ -313,6 +316,7 @@
 				C95558241FC66E7400A91C13 /* UsersTableViewController.swift in Sources */,
 				C95557F81FC66C2C00A91C13 /* AppDelegate.swift in Sources */,
 				C955581E1FC66CA400A91C13 /* ItemsTableViewController.swift in Sources */,
+				E19120732502C0E4002F508B /* Login.swift in Sources */,
 				C955581B1FC66C3D00A91C13 /* WebService.swift in Sources */,
 				9495CAF5213ACBA8005BE3B2 /* DateFormatterExtension.swift in Sources */,
 				948B48B521373B3F00E8E929 /* ButtonStyle.swift in Sources */,
