@@ -9,19 +9,23 @@
 import SwiftUI
 import Combine
 
-struct UserModel {
+class UserModel {
     var email: String = ""
     var password: String = ""
     var isLoggedIn: Bool = false
+    init() {
+        self.email = ""
+        self.password = ""
+        self.isLoggedIn = false
+    }
 }
-class LoginModel: ObservableObject {
-    @Published var userModel = UserModel()
-}
+//class LoginModel: ObservableObject {
+//    @Published var userModel = UserModel()
+//}
 
 struct Login: View {
-    @State var email: String = ""
-    @State var password: String = ""
-    @ObservedObject var model: LoginModel
+    @Binding var shouldDismiss: Bool
+    @Binding var model: UserModel
     
     var body: some View {
         NavigationView {
@@ -32,13 +36,19 @@ struct Login: View {
                 }
                 Section {
                     Button("Log In") {
-                        model.userModel.isLoggedIn = true 
+                        shouldDismiss = true
                     }
                     .font(.largeTitle)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                 }
             }
             .navigationTitle("Log In")
+            .navigationBarItems(trailing:
+                Button("Cancel") {
+                    shouldDismiss = true
+                }
+            )
+            .onAppear { shouldDismiss = false }
         }
     }
     
@@ -46,7 +56,7 @@ struct Login: View {
         VStack(alignment: .leading, spacing: 15) {
             Text("Email")
                 .font(.headline)
-            TextField("Email", text: $model.userModel.email).font(.largeTitle)
+            TextField("Email", text: $model.email).font(.largeTitle)
         }
     }
     
@@ -54,7 +64,7 @@ struct Login: View {
         VStack(alignment: .leading, spacing: 15) {
             Text("Password")
                 .font(.headline)
-            TextField("Password", text: $model.userModel.password).font(.largeTitle)
+            TextField("Password", text: $model.password).font(.largeTitle)
         }
     }
     

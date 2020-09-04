@@ -75,14 +75,34 @@ class FlowViewController: UIViewController {
         present(loginVC, animated: true, completion: nil)
     }
     
-    var loginModelCancellable: AnyCancellable?
+    var userModelCancellable: AnyCancellable?
+    
+    var model = UserModel()
+    
+    var userModel: Binding<UserModel> {
+        return Binding<UserModel>(
+            get: { return self.model },
+            set: { m in
+                self.model.email = m.email
+                self.model.password = m.password
+                self.model.isLoggedIn = m.isLoggedIn
+            }
+        )
+    }
+    
+    var shouldDismiss: Binding<Bool> {
+        return Binding<Bool>(
+            get: { return self.model.isLoggedIn },
+            set: { value in
+                if value {
+                    self.presentedViewController?.dismiss(animated: true, completion: nil)
+                }
+            }
+        )
+    }
+    
     func showLoginSWiftUI() {
-        let model = LoginModel()
-        loginModelCancellable = model.$userModel.sink {
-            print("email : \($0.email)")
-            print("password : \($0.password)")
-        }
-        let hostingCon = UIHostingController(rootView: Login(model: model))
+        let hostingCon = UIHostingController(rootView: Login(shouldDismiss: shouldDismiss, model: userModel))
         present(hostingCon, animated: true, completion: nil)
     }
     
