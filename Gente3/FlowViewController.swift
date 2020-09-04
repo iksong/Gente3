@@ -24,31 +24,33 @@ class FlowViewController: UIViewController {
     }
     
     private func setupMenu() {
-        let userTableButton = UIButton()
-        userTableButton.apply(style: .black)
-        userTableButton.setTitle("User - TableView", for: .normal)
-        userTableButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
-        userTableButton.addTarget(self, action: #selector(showUsersTable), for: .touchUpInside)
-        userTableButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            userTableButton.heightAnchor.constraint(equalToConstant: 60)
-        ])
+        let userTableButton = UIButton(primaryAction: UIAction { _ in
+            self.showUsersTable()
+        })
+        configureButton(userTableButton, with: "User - TableView")
         
-        let userCollectionButton = UIButton()
-        userCollectionButton.apply(style: .black)
-        userCollectionButton.setTitle("User - CollectionView", for: .normal)
-        userCollectionButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
-        userCollectionButton.addTarget(self, action: #selector(showUsersCollection), for: .touchUpInside)
-        userCollectionButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            userCollectionButton.heightAnchor.constraint(equalToConstant: 60)
-        ])
+        let userCollectionButton = UIButton(primaryAction: UIAction { _ in
+            self.showUsersCollection()
+        })
+        configureButton(userCollectionButton, with: "User - CollectionView")
+        
+        let loginButton = UIButton(primaryAction: UIAction { _ in
+            self.showLogin()
+        })
+        configureButton(loginButton, with: "Login - UIKit")
+        
+        let login2Button = UIButton(primaryAction: UIAction { _ in
+            self.showLoginSWiftUI()
+        })
+        configureButton(login2Button, with: "Login - SwiftUI")
         
         let stackV = UIStackView()
         stackV.axis = .vertical
         stackV.spacing = 15
         stackV.addArrangedSubview(userTableButton)
         stackV.addArrangedSubview(userCollectionButton)
+        stackV.addArrangedSubview(loginButton)
+        stackV.addArrangedSubview(login2Button)
         
         stackV.translatesAutoresizingMaskIntoConstraints = false
         
@@ -56,14 +58,33 @@ class FlowViewController: UIViewController {
         constraintToTop(stackV, constant: 200, spacing: 50)
     }
     
-    @objc func showUsersTable() {
+    func configureButton(_ button: UIButton, with title: String) {
+        button.apply(style: .black)
+        button.setTitle(title, for: .normal)
+        button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            button.heightAnchor.constraint(equalToConstant: 60)
+        ])
+    }
+    
+    func showLogin() {
+        let loginVC = LoginViewController()
+        present(loginVC, animated: true, completion: nil)
+    }
+    
+    func showLoginSWiftUI() {
+        // todo
+    }
+    
+    func showUsersTable() {
         let userVC = UsersTableViewController(items: [], resource: User.resourceForAllUsers(), cellDescriptor: CellDescriptor(configure: {$1.configure($0)}))
         userVC.delegate = self
 
         navigationController?.pushViewController(userVC, animated: true)
     }
     
-    @objc func showUsersCollection() {
+    func showUsersCollection() {
         let userVC = UsersCollectionViewController(items: [], resource: User.resourceForAllUsers())
         userVC.delegate = self
         navigationController?.pushViewController(userVC, animated: true)
