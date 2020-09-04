@@ -75,8 +75,6 @@ class FlowViewController: UIViewController {
         present(loginVC, animated: true, completion: nil)
     }
     
-    var userModelCancellable: AnyCancellable?
-    
     var model = UserModel()
     
     var userModel: Binding<UserModel> {
