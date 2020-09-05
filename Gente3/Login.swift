@@ -9,29 +9,17 @@
 import SwiftUI
 import Combine
 
-class UserModel {
-    var email: String = ""
-    var password: String = ""
-    var isLoggedIn: Bool = false
-    init() {
-        self.email = ""
-        self.password = ""
-        self.isLoggedIn = false
-    }
-}
-//class LoginModel: ObservableObject {
-//    @Published var userModel = UserModel()
-//}
-
 struct Login: View {
     @Binding var shouldDismiss: Bool
-    @Binding var model: UserModel
+    @ObservedObject var model: UserModel
     
     var body: some View {
         NavigationView {
             Form {
-                Section {
+                Section(footer: Text(model.emailErrorMessage).foregroundColor(.red)) {
                     emailView
+                }
+                Section(footer: Text(model.passwordErrorMessage).foregroundColor(.red)) {
                     passwordView
                 }
                 Section {
@@ -40,6 +28,7 @@ struct Login: View {
                     }
                     .font(.largeTitle)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                    .disabled(!model.isValid)
                 }
             }
             .navigationTitle("Log In")

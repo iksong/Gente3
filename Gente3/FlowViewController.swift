@@ -77,20 +77,10 @@ class FlowViewController: UIViewController {
     
     var model = UserModel()
     
-    var userModel: Binding<UserModel> {
-        return Binding<UserModel>(
-            get: { return self.model },
-            set: { m in
-                self.model.email = m.email
-                self.model.password = m.password
-                self.model.isLoggedIn = m.isLoggedIn
-            }
-        )
-    }
-    
+    var isPresenting = false
     var shouldDismiss: Binding<Bool> {
         return Binding<Bool>(
-            get: { return self.model.isLoggedIn },
+            get: { return self.isPresenting },
             set: { value in
                 if value {
                     self.presentedViewController?.dismiss(animated: true, completion: nil)
@@ -98,6 +88,8 @@ class FlowViewController: UIViewController {
             }
         )
     }
+    
+    var userModel = UserModel()
     
     func showLoginSWiftUI() {
         let hostingCon = UIHostingController(rootView: Login(shouldDismiss: shouldDismiss, model: userModel))
