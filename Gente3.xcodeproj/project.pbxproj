@@ -33,6 +33,13 @@
 		C979340A1FC7271B0008E9D7 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97934081FC7271A0008E9D7 /* LoadingViewController.swift */; };
 		C979340D1FC7556F0008E9D7 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C979340B1FC7556F0008E9D7 /* MessageViewController.swift */; };
 		C979340E1FC7556F0008E9D7 /* MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C979340C1FC7556F0008E9D7 /* MessageViewController.xib */; };
+		E191207E2506DFEA002F508B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E191207D2506DFEA002F508B /* AppDelegate.swift */; };
+		E19120802506DFEA002F508B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E191207F2506DFEA002F508B /* SceneDelegate.swift */; };
+		E19120822506DFEA002F508B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19120812506DFEA002F508B /* ContentView.swift */; };
+		E19120842506DFEC002F508B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E19120832506DFEC002F508B /* Assets.xcassets */; };
+		E19120872506DFEC002F508B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E19120862506DFEC002F508B /* Preview Assets.xcassets */; };
+		E191208A2506DFEC002F508B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E19120882506DFEC002F508B /* LaunchScreen.storyboard */; };
+		E191208F2506DFEC002F508B /* Clip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = E191207B2506DFEA002F508B /* Clip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +50,28 @@
 			remoteGlobalIDString = C95557F31FC66C2C00A91C13;
 			remoteInfo = Gente3;
 		};
+		E191208D2506DFEC002F508B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C95557EC1FC66C2C00A91C13 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E191207A2506DFEA002F508B;
+			remoteInfo = Clip;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E19120932506DFEC002F508B /* Embed App Clips */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
+			dstSubfolderSpec = 16;
+			files = (
+				E191208F2506DFEC002F508B /* Clip.app in Embed App Clips */,
+			);
+			name = "Embed App Clips";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		948B48AD21373B0B00E8E929 /* Rules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
@@ -76,6 +104,16 @@
 		C97934081FC7271A0008E9D7 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		C979340B1FC7556F0008E9D7 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		C979340C1FC7556F0008E9D7 /* MessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageViewController.xib; sourceTree = "<group>"; };
+		E19120762506DF83002F508B /* Gente3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gente3.entitlements; sourceTree = "<group>"; };
+		E191207B2506DFEA002F508B /* Clip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clip.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E191207D2506DFEA002F508B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E191207F2506DFEA002F508B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E19120812506DFEA002F508B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E19120832506DFEC002F508B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E19120862506DFEC002F508B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E19120892506DFEC002F508B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E191208B2506DFEC002F508B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E191208C2506DFEC002F508B /* Clip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Clip.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +125,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C95558051FC66C2C00A91C13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E19120782506DFEA002F508B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -145,6 +190,7 @@
 			children = (
 				C95557F61FC66C2C00A91C13 /* Gente3 */,
 				C955580B1FC66C2C00A91C13 /* Gente3Tests */,
+				E191207C2506DFEA002F508B /* Clip */,
 				C95557F51FC66C2C00A91C13 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -154,6 +200,7 @@
 			children = (
 				C95557F41FC66C2C00A91C13 /* Gente3.app */,
 				C95558081FC66C2C00A91C13 /* Gente3Tests.xctest */,
+				E191207B2506DFEA002F508B /* Clip.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -161,6 +208,7 @@
 		C95557F61FC66C2C00A91C13 /* Gente3 */ = {
 			isa = PBXGroup;
 			children = (
+				E19120762506DF83002F508B /* Gente3.entitlements */,
 				9495CAF7213AEA4A005BE3B2 /* Assets */,
 				9495CAF6213AE90D005BE3B2 /* Network */,
 				9495CAF3213ACB81005BE3B2 /* DateFormatter */,
@@ -196,6 +244,29 @@
 			path = Gente3Tests;
 			sourceTree = "<group>";
 		};
+		E191207C2506DFEA002F508B /* Clip */ = {
+			isa = PBXGroup;
+			children = (
+				E191207D2506DFEA002F508B /* AppDelegate.swift */,
+				E191207F2506DFEA002F508B /* SceneDelegate.swift */,
+				E19120812506DFEA002F508B /* ContentView.swift */,
+				E19120832506DFEC002F508B /* Assets.xcassets */,
+				E19120882506DFEC002F508B /* LaunchScreen.storyboard */,
+				E191208B2506DFEC002F508B /* Info.plist */,
+				E191208C2506DFEC002F508B /* Clip.entitlements */,
+				E19120852506DFEC002F508B /* Preview Content */,
+			);
+			path = Clip;
+			sourceTree = "<group>";
+		};
+		E19120852506DFEC002F508B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				E19120862506DFEC002F508B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -206,10 +277,12 @@
 				C95557F01FC66C2C00A91C13 /* Sources */,
 				C95557F11FC66C2C00A91C13 /* Frameworks */,
 				C95557F21FC66C2C00A91C13 /* Resources */,
+				E19120932506DFEC002F508B /* Embed App Clips */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E191208E2506DFEC002F508B /* PBXTargetDependency */,
 			);
 			name = Gente3;
 			productName = Gente3;
@@ -234,13 +307,30 @@
 			productReference = C95558081FC66C2C00A91C13 /* Gente3Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		E191207A2506DFEA002F508B /* Clip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E19120902506DFEC002F508B /* Build configuration list for PBXNativeTarget "Clip" */;
+			buildPhases = (
+				E19120772506DFEA002F508B /* Sources */,
+				E19120782506DFEA002F508B /* Frameworks */,
+				E19120792506DFEA002F508B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Clip;
+			productName = Clip;
+			productReference = E191207B2506DFEA002F508B /* Clip.app */;
+			productType = "com.apple.product-type.application.on-demand-install-capable";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		C95557EC1FC66C2C00A91C13 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0910;
+				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = IKSong;
 				TargetAttributes = {
@@ -252,6 +342,10 @@
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 						TestTargetID = C95557F31FC66C2C00A91C13;
+					};
+					E191207A2506DFEA002F508B = {
+						CreatedOnToolsVersion = 12.0;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -270,6 +364,7 @@
 			targets = (
 				C95557F31FC66C2C00A91C13 /* Gente3 */,
 				C95558071FC66C2C00A91C13 /* Gente3Tests */,
+				E191207A2506DFEA002F508B /* Clip */,
 			);
 		};
 /* End PBXProject section */
@@ -291,6 +386,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E19120792506DFEA002F508B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E191208A2506DFEC002F508B /* LaunchScreen.storyboard in Resources */,
+				E19120872506DFEC002F508B /* Preview Assets.xcassets in Resources */,
+				E19120842506DFEC002F508B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +437,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E19120772506DFEA002F508B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E191207E2506DFEA002F508B /* AppDelegate.swift in Sources */,
+				E19120802506DFEA002F508B /* SceneDelegate.swift in Sources */,
+				E19120822506DFEA002F508B /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -339,6 +454,11 @@
 			isa = PBXTargetDependency;
 			target = C95557F31FC66C2C00A91C13 /* Gente3 */;
 			targetProxy = C95558091FC66C2C00A91C13 /* PBXContainerItemProxy */;
+		};
+		E191208E2506DFEC002F508B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E191207A2506DFEA002F508B /* Clip */;
+			targetProxy = E191208D2506DFEC002F508B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -355,6 +475,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				C95558011FC66C2C00A91C13 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E19120882506DFEC002F508B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E19120892506DFEC002F508B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -472,12 +600,15 @@
 		C95558121FC66C2C00A91C13 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Gente3/Gente3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PHT5QWFP4N;
+				DEVELOPMENT_TEAM = P2874HG8D6;
 				INFOPLIST_FILE = Gente3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.iksong.Gente3;
+				MARKETING_VERSION = 1.5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iksong.Gente15;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -487,12 +618,15 @@
 		C95558131FC66C2C00A91C13 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Gente3/Gente3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PHT5QWFP4N;
+				DEVELOPMENT_TEAM = P2874HG8D6;
 				INFOPLIST_FILE = Gente3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.iksong.Gente3;
+				MARKETING_VERSION = 1.5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iksong.Gente15;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -533,6 +667,57 @@
 			};
 			name = Release;
 		};
+		E19120912506DFEC002F508B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = Clip/Clip.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Clip/Preview Content\"";
+				DEVELOPMENT_TEAM = P2874HG8D6;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Clip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iksong.Gente15.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E19120922506DFEC002F508B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = Clip/Clip.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Clip/Preview Content\"";
+				DEVELOPMENT_TEAM = P2874HG8D6;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Clip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iksong.Gente15.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -559,6 +744,15 @@
 			buildConfigurations = (
 				C95558151FC66C2C00A91C13 /* Debug */,
 				C95558161FC66C2C00A91C13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E19120902506DFEC002F508B /* Build configuration list for PBXNativeTarget "Clip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E19120912506DFEC002F508B /* Debug */,
+				E19120922506DFEC002F508B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
