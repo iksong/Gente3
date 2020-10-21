@@ -8,17 +8,39 @@
 
 import SwiftUI
 
+struct IntroModel {
+    let title: String
+    let subTitle: String
+    let color: Color
+    
+    static let atm = IntroModel(title: "Welcome To Clip", subTitle: "Let's find ATMs nearby", color: Color.green)
+    
+    static let card = IntroModel(title: "Welcome To Clip", subTitle: "Ready to active your card?", color: Color.init(.sRGB, red: 8/255, green: 50/255, blue: 66/255, opacity: 1.0))
+}
+
 struct ContentView: View {
+    var model: IntroModel
     var body: some View {
-        Text("Welcome To Clip")
+        ZStack {
+            Circle()
+                .stroke(model.color, lineWidth: 2.0)
+                .frame(width: 300, height: 300, alignment: .center)
+            Circle()
+                .fill(model.color)
+                .frame(width: 292, height: 292, alignment: .center)
+            Text(model.subTitle)
+                .foregroundColor(.white)
+                .font(.headline)
+        }
+        Text(model.title)
             .font(.headline)
-            .foregroundColor(Color.purple)
+            .foregroundColor(Color.orange)
             .padding()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(model: IntroModel.card)
     }
 }

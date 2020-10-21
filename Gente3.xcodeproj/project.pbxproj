@@ -36,10 +36,10 @@
 		E191207E2506DFEA002F508B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E191207D2506DFEA002F508B /* AppDelegate.swift */; };
 		E19120802506DFEA002F508B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E191207F2506DFEA002F508B /* SceneDelegate.swift */; };
 		E19120822506DFEA002F508B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19120812506DFEA002F508B /* ContentView.swift */; };
-		E19120842506DFEC002F508B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E19120832506DFEC002F508B /* Assets.xcassets */; };
 		E19120872506DFEC002F508B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E19120862506DFEC002F508B /* Preview Assets.xcassets */; };
 		E191208A2506DFEC002F508B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E19120882506DFEC002F508B /* LaunchScreen.storyboard */; };
 		E191208F2506DFEC002F508B /* Clip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = E191207B2506DFEA002F508B /* Clip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E1912094250701AC002F508B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C95557FE1FC66C2C00A91C13 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -395,7 +395,7 @@
 			files = (
 				E191208A2506DFEC002F508B /* LaunchScreen.storyboard in Resources */,
 				E19120872506DFEC002F508B /* Preview Assets.xcassets in Resources */,
-				E19120842506DFEC002F508B /* Assets.xcassets in Resources */,
+				E1912094250701AC002F508B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,10 +604,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Gente3/Gente3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = P2874HG8D6;
 				INFOPLIST_FILE = Gente3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iksong.Gente15;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -622,10 +623,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Gente3/Gente3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = P2874HG8D6;
 				INFOPLIST_FILE = Gente3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iksong.Gente15;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -678,6 +680,7 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_ENTITLEMENTS = Clip/Clip.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Clip/Preview Content\"";
 				DEVELOPMENT_TEAM = P2874HG8D6;
 				ENABLE_PREVIEWS = YES;
@@ -704,6 +707,7 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_ENTITLEMENTS = Clip/Clip.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Clip/Preview Content\"";
 				DEVELOPMENT_TEAM = P2874HG8D6;
 				ENABLE_PREVIEWS = YES;
