@@ -39,15 +39,64 @@ extension IntroModel {
 struct ContentView: View {
     @State var half = true
     @State var progress: CGFloat = 0.0
+    @State var animateFlag = false
+    @Namespace var nspace
+    
+    let retroColors: [Color] = [
+        Color.init(.sRGB, red: 129/255, green: 179/255, blue: 174/255, opacity: 1.0),
+        Color.init(.sRGB, red: 225/255, green: 124/255, blue: 123/255, opacity: 1.0),
+        Color.init(.sRGB, red: 170/255, green: 82/255, blue: 78/255, opacity: 1.0),
+        Color.init(.sRGB, red: 44/255, green: 47/255, blue: 90/255, opacity: 1.0),
+        Color.init(.sRGB, red: 229/255, green: 202/255, blue: 175/255, opacity: 1.0),
+        Color.init(.sRGB, red: 136/255, green: 29/255, blue: 29/255, opacity: 1.0),
+        Color.init(.sRGB, red: 120/255, green: 149/255, blue: 97/255, opacity: 1.0)
+    ]
+    
     var model: IntroModel
     var body: some View {
+        if animateFlag {
+            rectableView
+                .matchedGeometryEffect(id: "geoeffect1", in: nspace)
+        } else {
+            circleView
+                .matchedGeometryEffect(id: "geoeffect1", in: nspace)
+        }
+        
+        Text(model.title)
+            .font(.headline)
+            .foregroundColor(Color.orange)
+            .padding()
+        
+        Button("Let's Go") { withAnimation(.easeInOut(duration: 0.5)) {
+            animateFlag.toggle()
+        } }.font(.headline)
+    }
+    
+    var accentColor: Color {
+        retroColors.randomElement() ?? model.color
+    }
+    var rectableView: some View {
+        ZStack {
+            Rectangle()
+                .stroke(accentColor, lineWidth: 2.0)
+                .frame(width: 300, height: 200, alignment: .center)
+            Rectangle()
+                .fill(accentColor)
+                .frame(width: 292, height: 192, alignment: .center)
+            Text(model.subTitle)
+                .foregroundColor(.white)
+                .font(.headline)
+        }
+    }
+    
+    var circleView: some View {
         ZStack {
             Circle()
                 .trim(from: 0.0, to: progress)
-                .stroke(model.color, lineWidth: 2.0)
+                .stroke(accentColor, lineWidth: 2.0)
                 .frame(width: 300, height: 300, alignment: .center)
             Circle()
-                .fill(model.color)
+                .fill(accentColor)
                 .frame(width: 292, height: 292, alignment: .center)
                 .scaleEffect(half ? 0.2 : 1.0)
             Text(model.subTitle)
@@ -59,10 +108,6 @@ struct ContentView: View {
             half = false
             progress = 1.0
         })
-        Text(model.title)
-            .font(.headline)
-            .foregroundColor(Color.orange)
-            .padding()
     }
 }
 
