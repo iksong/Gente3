@@ -37,19 +37,28 @@ extension IntroModel {
 }
 
 struct ContentView: View {
+    @State var half = true
+    @State var progress: CGFloat = 0.0
     var model: IntroModel
     var body: some View {
         ZStack {
             Circle()
+                .trim(from: 0.0, to: progress)
                 .stroke(model.color, lineWidth: 2.0)
                 .frame(width: 300, height: 300, alignment: .center)
             Circle()
                 .fill(model.color)
                 .frame(width: 292, height: 292, alignment: .center)
+                .scaleEffect(half ? 0.2 : 1.0)
             Text(model.subTitle)
                 .foregroundColor(.white)
                 .font(.headline)
         }
+        .animation(.easeInOut(duration: 1.0))
+        .onAppear(perform: {
+            half = false
+            progress = 1.0
+        })
         Text(model.title)
             .font(.headline)
             .foregroundColor(Color.orange)
