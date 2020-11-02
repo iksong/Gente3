@@ -53,20 +53,21 @@ struct ContentView: View {
     ]
     
     var model: IntroModel
+    var isATM: Bool {
+        model.subTitle == IntroModel.atm.subTitle
+    }
+    
     var body: some View {
         if animateFlag {
             rectableView
-                .matchedGeometryEffect(id: "geoeffect1", in: nspace)
         } else {
-            circleView
-                .matchedGeometryEffect(id: "geoeffect1", in: nspace)
+            if isATM {
+                capsuleView
+            } else {
+                circleView
+            }
         }
-        
-        Text(model.title)
-            .font(.headline)
-            .foregroundColor(Color.orange)
-            .padding()
-        
+        titleView
         Button("Let's Go") { withAnimation(.easeInOut(duration: 0.5)) {
             animateFlag.toggle()
         } }.font(.headline)
@@ -75,6 +76,14 @@ struct ContentView: View {
     var accentColor: Color {
         retroColors.randomElement() ?? model.color
     }
+    
+    var titleView: some View {
+        Text(model.title)
+            .font(.headline)
+            .foregroundColor(Color.orange)
+            .padding()
+    }
+    
     var rectableView: some View {
         ZStack {
             Rectangle()
@@ -83,10 +92,8 @@ struct ContentView: View {
             Rectangle()
                 .fill(accentColor)
                 .frame(width: 292, height: 192, alignment: .center)
-            Text(model.subTitle)
-                .foregroundColor(.white)
-                .font(.headline)
-        }
+            subtitleView
+        }.matchedGeometryEffect(id: "geoeffect1", in: nspace)
     }
     
     var circleView: some View {
@@ -99,10 +106,36 @@ struct ContentView: View {
                 .fill(accentColor)
                 .frame(width: 292, height: 292, alignment: .center)
                 .scaleEffect(half ? 0.2 : 1.0)
-            Text(model.subTitle)
-                .foregroundColor(.white)
-                .font(.headline)
+            subtitleView
         }
+        .matchedGeometryEffect(id: "geoeffect1", in: nspace)
+        .animation(.easeInOut(duration: 1.0))
+        .onAppear(perform: {
+            half = false
+            progress = 1.0
+        })
+    }
+    
+    var subtitleView: some View {
+        Text(model.subTitle)
+            .foregroundColor(.white)
+            .font(.system(size: 22))
+            .fontWeight(.bold)
+    }
+    
+    var capsuleView: some View {
+        ZStack {
+            Capsule(style: .continuous)
+                .trim(from: 0.0, to: progress)
+                .stroke(accentColor, lineWidth: 2.0)
+                .frame(width: 300, height: 100, alignment: .center)
+            Capsule(style: .continuous)
+                .fill(accentColor)
+                .frame(width: 292, height: 92, alignment: .center)
+                .scaleEffect(half ? 0.2 : 1.0)
+            subtitleView
+        }
+        .matchedGeometryEffect(id: "geoeffect1", in: nspace)
         .animation(.easeInOut(duration: 1.0))
         .onAppear(perform: {
             half = false
